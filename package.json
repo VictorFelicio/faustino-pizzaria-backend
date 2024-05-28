@@ -1,0 +1,11 @@
+{
+  "name": "pizzaria-backend",
+  "version": "1.0.0",
+  "description": "Backend da pizzaria Faustino, projeto para construção de portifólio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "João Victor Felicio",
+  "license": "ISC"
+}
