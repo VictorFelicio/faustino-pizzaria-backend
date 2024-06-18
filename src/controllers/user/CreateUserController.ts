@@ -16,9 +16,7 @@ class CreateUserController {
 
             return res.status(201).json(user);
         } catch (error: Error | unknown) {
-            if (error instanceof Error) {
-                throw new Error(error.message);
-            }
+            console.log(error);
 
             return {
                 message: 'Algo ocorreu, estamos trabalhando para consertar',

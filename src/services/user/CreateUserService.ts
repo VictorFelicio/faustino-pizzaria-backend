@@ -31,20 +31,19 @@ class CreateUserService {
                     email: email,
                     password: password,
                 },
+                select: {
+                    id: true,
+                    name: true,
+                    email: true,
+                },
             });
 
             return userCreated;
-            
         } catch (error: Error | unknown) {
-            if (error instanceof Error) {
-                // Mensagem de erro conhecida
-                return { messagem: error.message };
-            } else {
-                // Erro desconhecido
-                return {
-                    message: 'Algo ocorreu, estamos trabalhando para consertar',
-                };
-            }
+            console.log(error);
+            return {
+                message: 'Algo ocorreu, estamos trabalhando para consertar',
+            };
         }
     }
 }
