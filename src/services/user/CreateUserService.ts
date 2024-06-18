@@ -1,6 +1,6 @@
 import { prismaClient } from '../../prisma';
 import { UserType } from '../types/UserTypes';
-import { CreateUserValidator } from './CreateUserValidator';
+import { CreateUserValidator } from './utils/CreateUserValidator';
 
 class CreateUserService {
     async execute({ name, email, password }: UserType) {
@@ -34,6 +34,7 @@ class CreateUserService {
             });
 
             return userCreated;
+            
         } catch (error: Error | unknown) {
             if (error instanceof Error) {
                 // Mensagem de erro conhecida

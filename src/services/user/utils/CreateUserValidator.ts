@@ -1,4 +1,4 @@
-import { UserType } from '../types/UserTypes';
+import { UserType } from '../../types/UserTypes';
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
