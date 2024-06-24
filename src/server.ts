@@ -22,4 +22,4 @@ server.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     });
 });
 
-server.listen(3333, () => console.log('Server list on port :3333!!'));
+server.listen(3333, () => console.log('Server listen on localhost:3333'));
