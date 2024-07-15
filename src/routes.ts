@@ -13,6 +13,6 @@ routers.get(
 );
 
 routers.post('/users', new CreateUserController().create);
-routers.post('/session', new AuthUserController().hanle);
+routers.post('/session', new AuthUserController().handle);
 
 export { routers };
