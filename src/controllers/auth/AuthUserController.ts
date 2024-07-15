@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { AuthUserService } from '../../services/auth/AuthUserService';
 
 class AuthUserController {
-    async hanle(req: Request, res: Response) {
+    async handle(req: Request, res: Response) {
         const { email, password } = req.body;
 
         const authUserService = new AuthUserService();
