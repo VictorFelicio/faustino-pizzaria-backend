@@ -1,6 +1,6 @@
 import { prismaClient } from '../../prisma';
 
-class ListCategoryService {
+class CategoryListService {
     async execute() {
         const categories = await prismaClient.category.findMany({
             select: {
@@ -13,4 +13,4 @@ class ListCategoryService {
     }
 }
 
-export { ListCategoryService };
+export { CategoryListService };

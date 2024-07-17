@@ -5,7 +5,7 @@ import { CreateUserValidator } from './utils/CreateUserValidator';
 
 import { hash } from 'bcrypt';
 
-class CreateUserService {
+class UserCreateService {
     async execute({ name, email, password }: UserType) {
         const userAlreadyExists = await prismaClient.user.findFirst({
             where: {
@@ -46,4 +46,4 @@ class CreateUserService {
     }
 }
 
-export { CreateUserService };
+export { UserCreateService };

@@ -4,7 +4,7 @@ interface CategoryPayload {
     name: string;
 }
 
-class CreateCategoriesService {
+class CategoryCreateService {
     async execute({ name }: CategoryPayload) {
         console.log(name);
 
@@ -26,4 +26,4 @@ class CreateCategoriesService {
     }
 }
 
-export { CreateCategoriesService };
+export { CategoryCreateService };
