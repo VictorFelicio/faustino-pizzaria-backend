@@ -10,6 +10,7 @@ import { ProductCreateController } from './controllers/product/product-create-co
 
 import uploadConfig from '../src/config/multer';
 import multer from 'multer';
+import { ProductListByCategoryController } from './controllers/product/product-listBycategory-controller';
 
 const routers = Router();
 
@@ -38,6 +39,12 @@ routers.post(
     isAuthtenticated,
     upload.single('file'),
     new ProductCreateController().handle
+);
+
+routers.get(
+    '/product/category',
+    isAuthtenticated,
+    new ProductListByCategoryController().handle
 );
 
 export { routers };

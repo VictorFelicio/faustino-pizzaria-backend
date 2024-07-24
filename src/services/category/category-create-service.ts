@@ -6,8 +6,6 @@ interface CategoryPayload {
 
 class CategoryCreateService {
     async execute({ name }: CategoryPayload) {
-        console.log(name);
-
         if (!name || name.length < 3) {
             throw new Error('Nome inválido');
         }

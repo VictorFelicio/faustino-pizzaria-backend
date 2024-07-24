@@ -1,6 +1,6 @@
 import { prismaClient } from '../../prisma';
 
-interface ProductPayload {
+export interface ProductPayload {
     name: string;
     price: string;
     description: string;
