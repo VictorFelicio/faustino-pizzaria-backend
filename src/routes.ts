@@ -11,6 +11,9 @@ import { ProductCreateController } from './controllers/product/product-create-co
 import uploadConfig from '../src/config/multer';
 import multer from 'multer';
 import { ProductListByCategoryController } from './controllers/product/product-listBycategory-controller';
+import { OrderCreateController } from './controllers/order/order-create-controller';
+import { OrderRemoveController } from './controllers/order/order-remove-controller';
+import { OrderAddItemController } from './controllers/order/order-addItem-controller';
 
 const routers = Router();
 
@@ -46,5 +49,14 @@ routers.get(
     isAuthtenticated,
     new ProductListByCategoryController().handle
 );
+
+// -- ORDER ROUTERS -- //
+routers.post('/order', isAuthtenticated, new OrderCreateController().handle);
+routers.post(
+    '/order/item',
+    isAuthtenticated,
+    new OrderAddItemController().handle
+);
+routers.delete('/order', isAuthtenticated, new OrderRemoveController().handle);
 
 export { routers };
