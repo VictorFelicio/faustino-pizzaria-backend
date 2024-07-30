@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import uploadConfig from '../src/config/multer';
+import multer from 'multer';
 
 import { isAuthtenticated } from './controllers/middlewares/isAuthenticated';
 import { UserDetailsController } from './controllers/user/user-details-controller';
@@ -7,9 +9,6 @@ import { AuthUserController } from './controllers/auth/auth-user-controller';
 import { CategoryCreateController } from './controllers/category/category-create-controller';
 import { CategoryListController } from './controllers/category/category-list-controller';
 import { ProductCreateController } from './controllers/product/product-create-controller';
-
-import uploadConfig from '../src/config/multer';
-import multer from 'multer';
 import { ProductListByCategoryController } from './controllers/product/product-listBycategory-controller';
 import { OrderCreateController } from './controllers/order/order-create-controller';
 import { OrderRemoveController } from './controllers/order/order-remove-controller';
@@ -19,8 +18,8 @@ import { OrderSendController } from './controllers/order/order-send-controller';
 import { OrderListController } from './controllers/order/order-list-controller';
 
 const routers = Router();
-
 const upload = multer(uploadConfig.upload('./temp'));
+
 // -- USER ROUTERS -- //
 routers.get(
     '/user/details',
