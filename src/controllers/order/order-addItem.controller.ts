@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { OrderAddItemService } from '../../services/order/order-addItem-service';
+import { OrderAddItemService } from '../../services/order/order-addItem.service';
 
 class OrderAddItemController {
     async handle(req: Request, res: Response) {

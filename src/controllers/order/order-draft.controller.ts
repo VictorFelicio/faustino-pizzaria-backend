@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { OrderDraftService } from '../../services/order/order-draft-service';
+import { OrderDraftService } from '../../services/order/order-draft.service';
 
 class OrderDraftController {
     async handle(req: Request, res: Response) {

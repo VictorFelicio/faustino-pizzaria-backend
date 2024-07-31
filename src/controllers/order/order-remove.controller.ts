@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { OrderRemoveService } from '../../services/order/order-remove-service';
+import { OrderRemoveService } from '../../services/order/order-remove.service';
 
 class OrderRemoveController {
     async handle(req: Request, res: Response) {
