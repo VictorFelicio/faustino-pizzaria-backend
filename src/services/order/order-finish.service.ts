@@ -6,6 +6,8 @@ interface FinishPayload {
 
 class OrderFinishService {
     async execute({ order_id }: FinishPayload) {
+        console.log(order_id);
+
         const order = await prismaClient.order.update({
             where: {
                 id: order_id,
