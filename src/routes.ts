@@ -14,8 +14,9 @@ import { OrderCreateController } from './controllers/order/order-create-controll
 import { OrderRemoveController } from './controllers/order/order-remove-controller';
 import { OrderAddItemController } from './controllers/order/order-addItem-controller';
 import { OrderRemoveItemController } from './controllers/order/order-RemoveItem-controller';
-import { OrderSendController } from './controllers/order/order-send-controller';
+import { OrderDraftController } from './controllers/order/order-draft-controller';
 import { OrderListController } from './controllers/order/order-list-controller';
+import { OrderListItemsController } from './controllers/order/order-listItems-controller';
 
 const routers = Router();
 const upload = multer(uploadConfig.upload('./temp'));
@@ -54,6 +55,11 @@ routers.get(
 
 // -- ORDER ROUTERS -- //
 routers.get('/order', isAuthtenticated, new OrderListController().handle);
+routers.get(
+    '/order/items',
+    isAuthtenticated,
+    new OrderListItemsController().handle
+);
 
 routers.post('/order', isAuthtenticated, new OrderCreateController().handle);
 routers.post(
@@ -68,6 +74,6 @@ routers.delete(
     new OrderRemoveItemController().handle
 );
 
-routers.patch('/order', isAuthtenticated, new OrderSendController().handle);
+routers.patch('/order', isAuthtenticated, new OrderDraftController().handle);
 
 export { routers };
